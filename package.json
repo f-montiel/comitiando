@@ -1,0 +1,28 @@
+{
+  "name": "backend-restaurante",
+  "version": "1.0.0",
+  "description": "Backend de una app para poder hacer tu pedido en un restaurante",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec babel-node src/index.js"
+  },
+  "keywords": [
+    "backend",
+    "react",
+    "javascript",
+    "express"
+  ],
+  "author": "Comitiando Team",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express-validator": "^6.14.2",
+    "mongoose": "^6.7.0",
+    "morgan": "^1.10.0"
+  }
+}
