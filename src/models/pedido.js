@@ -1,24 +1,32 @@
-import mongoose, {Schema} from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const pedidoSchema = new Schema({
-    usuario:{
-        type: Object,
-        required: true
+    usuario: {
+        type: String,
+        required: true,
     },
-    fecha:{
+    fecha: {
         type: Date,
-        required: true
+        required: true,
     },
     productos: {
-        type: Object,
-        required: true
+        type: Array,
+        required: true,
+    },
+    domicilio: {
+        type: String,
+        required: true,
+    },
+    indicaciones: {
+        type: String,
+        required: false,
     },
     estado: {
         type: Boolean,
-        require: true
-    }
+        require: true,
+    },
 });
 
-const Pedido = mongoose.model('pedido', pedidoSchema);
+const Pedido = mongoose.model("pedido", pedidoSchema);
 
 export default Pedido;
