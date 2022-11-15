@@ -43,6 +43,7 @@ export const guardarUsuario = async(req, res)=>{
 export const editarUsuario = async(req, res)=>{
     try {
         const id = req.params.id;
+        console.log(req.body);
         await Usuario.findByIdAndUpdate(id, req.body)
         res.status(200).json({
             mensaje: "El usuario se edito con exito"

@@ -13,12 +13,12 @@ const usuarioSchema = new Schema({
         type: String,
         required: true
     },
-    estado: {
-        type: Boolean,
-        required: true
-    },
     perfil: {
         type: String,
+        required: true
+    },
+    estado: {
+        type: Boolean,
         required: true
     }
 });
