@@ -1,5 +1,5 @@
 import Pedido from "../models/pedido";
-
+import { validationResult } from "express-validator";
 export const listarPedidos = async (req, res)=>{
     try {
         const pedidos = await Pedido.find();
@@ -27,6 +27,12 @@ export const buscarPedido = async (req, res)=>{
 
 export const guardarPedido = async(req, res)=>{
     try {
+        const errors = validationResult(req);
+        if(!errors.isEmpty()){
+            return res.status(400).json({
+                errores: errors.array()
+            })
+        }
         const pedidoGuardado = new Pedido(req.body);
         await pedidoGuardado.save();
         res.status(201).json({

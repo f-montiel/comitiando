@@ -1,3 +1,4 @@
+import { validationResult } from "express-validator";
 import Usuario from "../models/usuario";
 
 export const listarUsuarios = async (req, res)=>{
@@ -27,6 +28,12 @@ export const buscarUsuario = async (req, res)=>{
 
 export const guardarUsuario = async(req, res)=>{
     try {
+        const errors = validationResult(req);
+        if(!errors.isEmpty()){
+            return res.status(400).json({
+                errores: errors.array()
+            })
+        }
         const usuarioGuardado = new Usuario(req.body);
         await usuarioGuardado.save();
         res.status(201).json({
