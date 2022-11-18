@@ -28,6 +28,7 @@ export const buscarUsuario = async (req, res)=>{
 
 export const guardarUsuario = async(req, res)=>{
     try {
+        console.log(req.body)
         const errors = validationResult(req);
         if(!errors.isEmpty()){
             return res.status(400).json({

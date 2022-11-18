@@ -43,7 +43,7 @@ router
           'La contraseña debe tener como minimo 6 caracteres y maximo 20',
         ),
       check('perfil')
-        .notEmpty('')
+        .notEmpty()
         .withMessage('El perfil es un dato obligatorio'),
       check('estado')
         .notEmpty()
@@ -87,7 +87,7 @@ router
           'La contraseña debe tener como minimo 6 caracteres y maximo 20',
         ),
       check('perfil')
-        .notEmpty('')
+        .notEmpty()
         .withMessage('El perfil es un dato obligatorio'),
       check('estado')
         .notEmpty()
