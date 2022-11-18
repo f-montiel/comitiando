@@ -22,7 +22,7 @@ router
         .withMessage('El dato ingresado debe ser de tipo string')
         .isLength({
           min: 2,
-          max: 150,
+          max: 30,
         })
         .withMessage(
           'El nombre del usuario puede tener entre 2 y 150 caracteres',
@@ -38,10 +38,10 @@ router
         .isNumeric()
         .withMessage('El valor ingresado debe ser numerico')
         .custom((value) => {
-          if (value >= 1 && value <= 7000) {
+          if (value >= 1 && value <= 10000) {
             return true
           } else {
-            throw new Error('El precio debe estar entre 1 y 7000')
+            throw new Error('El precio debe estar entre 1 y 10000')
           }
         }),
       check('detalle')
@@ -50,14 +50,14 @@ router
         .isString()
         .withMessage('El detalle debe ser de tipo string')
         .isLength({
-          min: 10,
-          max: 200,
+          min: 20,
+          max: 500,
         })
-        .withMessage('El detalle debe tener entre 10 y 200 caracteres'),
+        .withMessage('El detalle debe tener entre 20 y 500 caracteres'),
       check('categoria')
         .notEmpty()
         .withMessage('La categoria es un campo Obligatorio')
-        .isIn(['Para Compartir', 'Tacos', 'Brochetas', 'Sushi', 'Tazones'])
+        .isIn(['BENTOS', 'TAKOS TAKOS', 'BROSCHETAS Y KUSHIAGES', 'KAITEN SUSHI', 'MAKI SUSHI BAR', 'TAZONES DONBURI', 'RAMEN', 'TEPPANYAKI', 'ARROZ', 'NIGIRI BAR', 'SASHIMI', 'CERVEZA Y SAKE', 'REFRESCOS'])
         .withMessage('Debe ingresar una categoria valida'),
       check('imagen')
         .notEmpty('La URL del producto es obligatoria')
@@ -79,7 +79,7 @@ router
         .withMessage('El dato ingresado debe ser de tipo string')
         .isLength({
           min: 2,
-          max: 150,
+          max: 30,
         })
         .withMessage(
           'El nombre del usuario puede tener entre 2 y 150 caracteres',
@@ -92,13 +92,13 @@ router
       check('precio')
         .notEmpty()
         .withMessage('El precio es un valor obligatorio')
-        .isNumeric();
+        .isNumeric()
         .withMessage('El valor ingresado debe ser numerico')
         .custom((value) => {
-          if (value >= 1 && value <= 7000) {
+          if (value >= 1 && value <= 10000) {
             return true
           } else {
-            throw new Error('El precio debe estar entre 1 y 7000')
+            throw new Error('El precio debe estar entre 1 y 10000')
           }
         }),
       check('detalle')
@@ -107,14 +107,14 @@ router
         .isString()
         .withMessage('El detalle debe ser de tipo string')
         .isLength({
-          min: 10,
-          max: 200,
+          min: 20,
+          max: 500,
         })
-        .withMessage('El detalle debe tener entre 10 y 200 caracteres'),
+        .withMessage('El detalle debe tener entre 20 y 500 caracteres'),
       check('categoria')
         .notEmpty()
         .withMessage('La categoria es un campo Obligatorio')
-        .isIn(['Para Compartir', 'Tacos', 'Brochetas', 'Sushi', 'Tazones'])
+        .isIn(['BENTOS', 'TAKOS TAKOS', 'BROSCHETAS Y KUSHIAGES', 'KAITEN SUSHI', 'MAKI SUSHI BAR', 'TAZONES DONBURI', 'RAMEN', 'TEPPANYAKI', 'ARROZ', 'NIGIRI BAR', 'SASHIMI', 'CERVEZA Y SAKE', 'REFRESCOS'])
         .withMessage('Debe ingresar una categoria valida'),
       check('imagen')
         .notEmpty('La URL del producto es obligatoria')
