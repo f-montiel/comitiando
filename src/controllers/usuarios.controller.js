@@ -28,14 +28,19 @@ export const buscarUsuario = async (req, res)=>{
 
 export const guardarUsuario = async(req, res)=>{
     try {
-        console.log(req.body)
         const errors = validationResult(req);
         if(!errors.isEmpty()){
             return res.status(400).json({
                 errores: errors.array()
             })
         }
-        const usuarioGuardado = new Usuario(req.body);
+        let usuarioGuardado = await Usuario.findOne({email: req.body.email});
+        if(usuarioGuardado){
+            return res.status(400).json({
+                mensaje: "ya existe un usuario con el email enviado"
+            })
+        }
+        usuarioGuardado = new Usuario(req.body);
         await usuarioGuardado.save();
         res.status(201).json({
             mensaje: "El usuario fue guardado con exito"
