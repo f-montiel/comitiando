@@ -22,7 +22,8 @@ export const login = async (req, res)=>{
                 mensaje : 'correo o password invalido - password'
             })
         }
-        res.status(200).json({
+        return res.status(200).json({
+            email,
             mensaje: 'El usuario existe'
         })
 
