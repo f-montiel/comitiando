@@ -1,5 +1,6 @@
 import { validationResult } from "express-validator";
 import Usuario from "../models/usuario";
+import bcrypt from 'bcryptjs';
 
 export const listarUsuarios = async (req, res)=>{
     try {
@@ -41,6 +42,8 @@ export const guardarUsuario = async(req, res)=>{
             })
         }
         usuarioGuardado = new Usuario(req.body);
+        const saltos = bcrypt.genSaltSync();
+        usuarioGuardado.password = bcrypt.hashSync(req.body.password, saltos);
         await usuarioGuardado.save();
         res.status(201).json({
             mensaje: "El usuario fue guardado con exito"
