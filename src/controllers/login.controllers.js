@@ -1,5 +1,6 @@
 import { validationResult } from "express-validator"
 import Usuario from "../models/usuario";
+import bcrypt from 'bcryptjs';
 
 export const login = async (req, res)=>{
     try {
@@ -17,7 +18,8 @@ export const login = async (req, res)=>{
                 mensaje : 'correo o password invalido - correo'
             })
         }
-        if(password !== usuario.password){
+        const passwordValido = bcrypt.compareSync(password, usuario.password);
+        if(!passwordValido){
             return res.status(400).json({
                 mensaje : 'correo o password invalido - password'
             })
