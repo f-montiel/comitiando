@@ -52,7 +52,7 @@ router
                 .isIn([
                     "BENTOS",
                     "TAKA TAKOS",
-                    "BROSCHETAS Y KUSHIAGES",
+                    "BROCHETAS Y KUSHIAGES",
                     "KAITEN SUSHI",
                     "MAKI SUSHI BAR",
                     "TAZONES DONBURI",
@@ -123,7 +123,7 @@ router
                 .isIn([
                     "BENTOS",
                     "TAKA TAKOS",
-                    "BROSCHETAS Y KUSHIAGES",
+                    "BROCHETAS Y KUSHIAGES",
                     "KAITEN SUSHI",
                     "MAKI SUSHI BAR",
                     "TAZONES DONBURI",
