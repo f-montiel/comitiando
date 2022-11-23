@@ -51,7 +51,7 @@ router
                 .withMessage("La categoria es un campo Obligatorio")
                 .isIn([
                     "BENTOS",
-                    "TAKOS TAKOS",
+                    "TAKA TAKOS",
                     "BROSCHETAS Y KUSHIAGES",
                     "KAITEN SUSHI",
                     "MAKI SUSHI BAR",
@@ -61,6 +61,7 @@ router
                     "ARROZ",
                     "NIGIRI BAR",
                     "SASHIMI",
+                    "MOCKTAILS",
                     "CERVEZA Y SAKE",
                     "REFRESCOS",
                 ])
@@ -121,7 +122,7 @@ router
                 .withMessage("La categoria es un campo Obligatorio")
                 .isIn([
                     "BENTOS",
-                    "TAKOS TAKOS",
+                    "TAKA TAKOS",
                     "BROSCHETAS Y KUSHIAGES",
                     "KAITEN SUSHI",
                     "MAKI SUSHI BAR",
@@ -131,6 +132,7 @@ router
                     "ARROZ",
                     "NIGIRI BAR",
                     "SASHIMI",
+                    "MOCKTAILS",
                     "CERVEZA Y SAKE",
                     "REFRESCOS",
                 ])
