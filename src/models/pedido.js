@@ -6,7 +6,7 @@ const pedidoSchema = new Schema({
         required: true,
     },
     fecha: {
-        type: Date,
+        type: String,
         required: true,
     },
     productos: {
