@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { borrarProducto, buscarProducto, editarProducto, guardarProducto, listarProductos } from "../controllers/productos.controller";
+import validarJWT from "../helpers/validar-jwt";
 
 const router = Router();
 
@@ -9,6 +10,7 @@ router
     .get(listarProductos)
     .post(
         [
+            validarJWT,
             check("nombre")
                 .notEmpty()
                 .withMessage("El nombre es un dato obligatorio")
@@ -80,6 +82,7 @@ router
     .get(buscarProducto)
     .put(
         [
+            validarJWT,
             check("nombre")
                 .notEmpty()
                 .withMessage("El nombre es un dato obligatorio")

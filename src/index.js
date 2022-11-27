@@ -6,6 +6,9 @@ import productosRouter from "./routes/productos.routes";
 import pedidosRouter from "./routes/pedidos.routes";
 import loginRouter from "./routes/login.routes";
 import "./database";
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 app.set("port", process.env.PORT || 4000);
