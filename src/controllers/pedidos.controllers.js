@@ -5,7 +5,6 @@ export const listarPedidos = async (req, res)=>{
         const pedidos = await Pedido.find();
         res.status(200).json(pedidos);
     } catch (error) {
-        console.log(error);
         res.status(404).json({
             mensaje: "pedidos no encontrados"
         });
@@ -18,7 +17,6 @@ export const buscarPedido = async (req, res)=>{
         const pedidoBuscado = await Pedido.findById(id);
         res.status(200).json(pedidoBuscado);
     } catch (error) {
-        console.log(error);
         res.status(404).json({
             mensaje: "Pedido no encontrado"
         })
@@ -39,7 +37,6 @@ export const guardarPedido = async(req, res)=>{
             mensaje: "El pedido fue guardado con exito"
         })
     } catch (error) {
-        console.log(error);
         res.status(400).json({
             mensaje: "El pedido no se pudo guardar"
         })
@@ -54,7 +51,6 @@ export const editarPedido = async(req, res)=>{
             mensaje: "El pedido se edito con exito"
         });
     } catch (error) {
-        console.log(error);
         res.status(400).json({
             mensaje: "Error al editar el pedido"
         })
@@ -69,7 +65,6 @@ export const borrarPedido = async(req, res)=>{
             mensaje: "El pedido fue borrado"
         });
     } catch (error) {
-        console.log(error);
         res.status(404).json({
             mensaje: "El pedido no fue borrado"
         });

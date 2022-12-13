@@ -25,7 +25,6 @@ export const login = async (req, res)=>{
                 mensaje : 'correo o password invalido - password'
             })
         }
-        console.log(usuario)
         const token = await generarJWT(usuario._id, usuario.email);
         return res.status(200).json({
             usuario,
@@ -34,9 +33,6 @@ export const login = async (req, res)=>{
         })
 
     } catch (error) {
-        
-        console.log(req.body)
-        console.log(error)
         res.status(400).json({
             mensaje: 'usuario o contraseña invalido'
         })
