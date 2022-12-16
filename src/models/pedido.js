@@ -19,7 +19,7 @@ const pedidoSchema = new Schema({
     },
     indicaciones: {
         type: String,
-        required: false,
+        required: true,
     },
     estado: {
         type: Boolean,
